@@ -19,9 +19,14 @@
     position: relative;
     margin-left: 8px;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 1.46;
     letter-spacing: 00.03em;
+    font-size: 12px;
+    line-height: 1.1667;
+
+    @include desktop {
+      font-size: 14px;
+      line-height: 1.46;
+    }
 
     &::before {
       position: absolute;

@@ -792,6 +792,13 @@ body.modal-open {
       flex-wrap: wrap;
   margin-bottom: 50px;
 }
+@media screen and (min-width: 1200px) {
+  .portfolio__buttons {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 
 .portfolio__button {
   border-radius: 4px;

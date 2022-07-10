@@ -1,0 +1,53 @@
+.hero {
+  background-color: #2f303a;
+  &__title {
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 700px;
+    color: $background-color;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.36;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 30px;
+
+    line-height: 1.875;
+    min-width: 200px;
+    min-height: 50px;
+    border-radius: 4px;
+    border-width: 2px;
+    border-color: $focused-button;
+    box-shadow: 0px 4px 4px 0px #00000026;
+
+    @include transition-common(background-color);
+
+    &__button:focus,
+    &__button:hover {
+      background-color: $focused-button;
+    }
+  }
+}
+.section.hero {
+  background-image: linear-gradient(#2f303a40, #2f303a40),
+    url("../images/hero-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: 200px 0;
+}
+
+.container.hero {
+  background-color: transparent;
+}

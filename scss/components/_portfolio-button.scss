@@ -1,0 +1,21 @@
+
+
+.portfolio__button {
+  border-radius: 4px;
+  border-color: transparent;
+  min-height: 38px;
+  min-width: 72px;
+  padding: 6px 22px;
+  @include transition-common(color);
+  @include transition-common(text-shadow);
+  @include transition-common(background-color);
+
+  &:focus,
+  &:hover {
+    box-shadow: 0px 4px 4px 0px #00000040;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 8px;
+  }
+}

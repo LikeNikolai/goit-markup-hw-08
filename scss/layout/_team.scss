@@ -1,0 +1,108 @@
+.team {
+  background-color: $teams-background-color;
+  &__title {
+    @extend %title-one;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+.team-member {
+  width: 100%;
+  @include tablet {
+    width: calc((100% - 30px) / 2);
+  }
+  @include desktop {
+    width: calc((100% - 90px) / 4);
+  }
+
+  background-color: $background-color;
+  box-shadow: 0px 4px 4px 0px #00000040;
+
+  &:not(:last-child) {
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  &__container {
+    height: 168px;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.185;
+    margin-bottom: 10px;
+    letter-spacing: 0.03;
+  }
+
+  &__job {
+    color: $additionaltext-color;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.03;
+  }
+  &__link {
+    width: 44px;
+    height: 44px;
+    @extend %df-aic;
+    justify-content: center;
+    border-radius: 50%;
+    @include transition-common(background-color);
+  }
+
+  &__svg {
+    fill: #afb1b8;
+    @include transition-common(fill);
+  }
+
+  &__contact:hover &__svg,
+  &__contact:focus &__svg {
+    fill: $background-color;
+  }
+
+  &__link:hover,
+  &__link:focus {
+    background-color: $active-color;
+  }
+
+  &__link:hover &__svg,
+  &__link:focus &__svg {
+    fill: $background-color;
+  }
+
+  &__contacts {
+    @extend %df-aic;
+    justify-content: center;
+  }
+
+  &__contact {
+    border-radius: 50%;
+    margin-left: 10px;
+
+    @include transition-common(color);
+    @include transition-common(box-shadow);
+    @include transition-common(background-color);
+  }
+
+  &__contact:first-child {
+    margin-left: 0px;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+}

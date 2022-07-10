@@ -1,0 +1,44 @@
+.works {
+  padding-top: 0;
+
+  &__title {
+    @extend %title-one;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    @extend %width-works;
+    margin-right: 30px;
+  }
+
+  &__thumb {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__desc {
+    position: absolute;
+    bottom: 0;
+    @extend %df-aic;
+    justify-content: center;
+
+    background-color: $works-descr-color;
+    @extend %width-works;
+    height: 70px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $background-color;
+  }
+
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+}

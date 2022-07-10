@@ -1,0 +1,102 @@
+.nav__items {
+  display: flex;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.nav__item {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+.nav__link {
+  color: $maintext-color;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @include transition-common(color);
+  @include transition-common(text-shadow);
+
+  &:focus,
+  &:hover {
+    color: $active-color;
+    filter: drop-shadow(0px 4px 4px #00000040);
+  }
+
+  &_active {
+    position: relative;
+    color: $active-color;
+  }
+
+  &_active::after {
+    position: absolute;
+
+    display: block;
+    content: "";
+    bottom: 0px;
+    width: 100%;
+
+    background-color: $active-color;
+    border: 2px solid $active-color;
+    border-radius: 2px;
+  }
+}
+
+.nav__contacts {
+  @extend %df-aic;
+  margin-left: auto;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+}
+
+.nav__contact__item {
+  @extend %df-aic;
+
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+.nav__contact__link {
+  @extend %df-aic;
+  justify-content: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: $additionaltext-color;
+
+  @include transition-common(color);
+  @include transition-common(text-shadow);
+  &:focus,
+  &:hover {
+    color: $active-color;
+  }
+
+  &:focus .nav__svg,
+  &:hover .nav__svg {
+    fill: $active-color;
+  }
+}
+
+.nav__svg {
+  margin-right: 10px;
+  fill: $additionaltext-color;
+
+  @include transition-common(fill);
+}
+
+.contacts__place {
+  color: $background-color;
+  line-height: 1.71;
+}

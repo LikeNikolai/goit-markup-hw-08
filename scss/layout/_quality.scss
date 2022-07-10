@@ -1,0 +1,54 @@
+.qualities-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.quality {
+  width: 100%;
+
+  @include tablet {
+    width: calc((100% - 30px) / 2);
+  }
+  @include desktop {
+    width: calc((100% - 90px) / 4);
+  }
+  &__title-main {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+  }
+
+  &__icon-container {
+    margin-bottom: 30px;
+    @extend %df-aic;
+    justify-content: center;
+    min-width: 270px;
+    height: 120px;
+    background-color: $teams-background-color;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__descr {
+    color: $additionaltext-color;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.46;
+  }
+}

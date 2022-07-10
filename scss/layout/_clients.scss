@@ -1,0 +1,52 @@
+.clients {
+  &__title {
+    font-size: 36px;
+    line-height: 1.667;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $maintext-color;
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    @extend %df-aic;
+    justify-content: center;
+  }
+
+  &__item {
+    @extend %df-aic;
+    justify-content: center;
+    margin-left: 30px;
+  }
+
+  &__item:first-child {
+    margin-left: 0;
+  }
+}
+
+.client__link {
+  width: 170px;
+  height: 90px;
+  border: 1px solid $client-link-color;
+  border-radius: 4px;
+  outline: transparent;
+
+  color: $active-color;
+
+  @include transition-common(border-color);
+
+  &:hover,
+  &:focus {
+    fill: inherit;
+    border-color: $active-color;
+  }
+}
+
+.client__icon {
+  fill: $client-link-color;
+  @include transition-common(fill);
+  .client__link:hover &,
+  .client__link:focus & {
+    fill: $active-color;
+  }
+}

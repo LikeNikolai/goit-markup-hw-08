@@ -1,0 +1,13 @@
+body {
+  color: $maintext-color;
+  @extend %ff-roboto-ss;
+  background-color: $background-color;
+  letter-spacing: 0.03em;
+  &.modal-open {
+    overflow: hidden;
+  }
+}
+
+.list {
+  list-style: none;
+}

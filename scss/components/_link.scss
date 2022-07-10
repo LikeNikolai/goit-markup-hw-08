@@ -1,0 +1,9 @@
+.link {
+  display: block;
+  text-decoration: none;
+
+  &__social {
+    @extend %df-aic;
+    justify-content: center;
+  }
+}

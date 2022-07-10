@@ -1,0 +1,47 @@
+.join {
+  &__title {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $background-color;
+  }
+
+  &__links {
+    margin-top: 20px;
+    @extend %df-aic;
+    justify-content: center;
+  }
+
+  &__container {
+    margin-left: 70px;
+  }
+
+  &__item {
+    display: block;
+    height: 44px;
+    width: 44px;
+    margin-left: 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    background-color: #ffffff10;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    @include transition-common(background-color);
+    @include transition-common(text-shadow);
+
+    &:hover,
+    &:focus {
+      background-color: $active-color;
+    }
+  }
+
+  &__icon {
+    fill: $background-color;
+  }
+}

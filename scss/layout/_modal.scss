@@ -8,8 +8,13 @@
 
     transform: translate(-50%, -50%) scale(1);
 
-    height: 581px;
-    width: 528px;
+    @include desktop {
+      height: 581px;
+      width: 528px;
+    }
+
+    height: 610px;
+    width: 450px;
     background-color: #fff;
 
     .backdrop.is-hidden & {

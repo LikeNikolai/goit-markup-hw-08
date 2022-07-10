@@ -4,7 +4,8 @@
 
 .portfolio__buttons {
   @extend %df-aic;
-  justify-content: center;
+  flex-wrap: wrap;
+  // justify-content: center;
   margin-bottom: 50px;
 }
 @import "../components/portfolio-button";

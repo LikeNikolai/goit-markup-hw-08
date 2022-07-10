@@ -4,14 +4,23 @@
     margin-left: auto;
     margin-right: auto;
 
-    width: 700px;
-    color: $background-color;
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
+    font-size: 26px;
+    line-height: 1.62;
     text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+
+    @include tablet {
+      width: 700px;
+    }
+    @include desktop {
+      font-size: 44px;
+      line-height: 1.36;
+    }
+    color: $background-color;
+    font-weight: 900;
+
     margin-bottom: 20px;
   }
 
@@ -40,6 +49,12 @@
 .section.hero {
   background-image: linear-gradient(#2f303a40, #2f303a40),
     url("../images/hero-bg.jpg");
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: linear-gradient(#2f303a40, #2f303a40),
+      url("../../images/hero-bg-2x.jpg");
+  }
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

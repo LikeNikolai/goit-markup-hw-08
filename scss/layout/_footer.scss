@@ -2,17 +2,26 @@
   background-color: $footer-color;
   padding-top: 60px;
   padding-bottom: 60px;
+  text-align: center;
 
   &__div {
     display: flex;
-    flex-wrap: wrap;
-    // align-items: baseline;
+    flex-direction: column;
+    justify-content: space-between;
+    @include tablet {
+      justify-content: space-around;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    @include desktop {
+      align-items: baseline;
+    }
   }
 
   &__container {
     display: flex;
-    // flex-wrap: wrap;
-    // flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   &__address {
@@ -40,6 +49,18 @@
   }
 
   &__contact:not(:last-child) {
-    margin-bottom: 9px;
+    margin-bottom: 8px;
+  }
+}
+.footer-logo-address {
+  @include tablet {
+    width: 232px;
+  }
+  @media screen and (max-width: 767px) {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  @include desktop {
+    text-align: start;
   }
 }

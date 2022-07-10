@@ -59,14 +59,14 @@
   @media screen and (max-width: 767px) {
     display: none;
   }
-  @include desktop {
-    display: flex;
-    align-items: center;
-  }
 
   @include tablet {
     display: block;
     padding-top: 20px;
+  }
+  @include desktop {
+    display: flex;
+    align-items: center;
   }
   margin-left: auto;
 

@@ -5,12 +5,14 @@
 
   &__div {
     display: flex;
-    align-items: baseline;
+    flex-wrap: wrap;
+    // align-items: baseline;
   }
 
   &__container {
     display: flex;
-    flex-direction: column;
+    // flex-wrap: wrap;
+    // flex-direction: column;
   }
 
   &__address {

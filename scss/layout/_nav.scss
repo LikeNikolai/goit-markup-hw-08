@@ -1,5 +1,10 @@
 .nav__items {
-  display: flex;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @include tablet {
+    display: flex;
+  }
 
   &:last-child {
     margin-right: 0;
@@ -51,7 +56,18 @@
 }
 
 .nav__contacts {
-  @extend %df-aic;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @include desktop {
+    display: flex;
+    align-items: center;
+  }
+
+  @include tablet {
+    display: block;
+    padding-top: 20px;
+  }
   margin-left: auto;
 
   font-weight: 500;
@@ -63,16 +79,23 @@
 .nav__contact__item {
   @extend %df-aic;
 
-  &:not(:last-child) {
-    margin-right: 50px;
+  @include desktop {
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
   }
 }
 
 .nav__contact__link {
   @extend %df-aic;
   justify-content: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  @include tablet {
+    margin-bottom: 10px;
+  }
+  @include desktop {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 
   color: $additionaltext-color;
 

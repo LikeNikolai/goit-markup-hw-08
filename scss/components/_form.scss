@@ -1,14 +1,11 @@
 .form {
   &__item {
     position: relative;
-
     display: flex;
     flex-direction: column;
-
     &:not(:first-child) {
       margin-top: 10px;
     }
-
     &:first-of-type {
       margin-top: 12px;
     }
@@ -29,8 +26,13 @@
     display: block;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-    width: 370px;
 
+    @media screen and (max-width: 479px) {
+      width: 100%;
+    }
+    @include mobile {
+      width: 370px;
+    }
     height: 40px;
     padding-left: 40px;
 

@@ -29,6 +29,7 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
+
     text-transform: uppercase;
   }
 
@@ -43,6 +44,10 @@
 
   &__title {
     margin-bottom: 10px;
+    text-align: center;
+    @include tablet {
+      text-align: left;
+    }
   }
 
   &__descr {
@@ -50,5 +55,8 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 1.46;
+    @include desktop {
+      line-height: 1.71;
+    }
   }
 }

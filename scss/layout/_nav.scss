@@ -24,8 +24,10 @@
 
 .nav__link {
   color: $maintext-color;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  @include tablet {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 
   @include transition-common(color);
   @include transition-common(text-shadow);
@@ -60,10 +62,6 @@
     display: none;
   }
 
-  @include tablet {
-    display: block;
-    padding-top: 20px;
-  }
   @include desktop {
     display: flex;
     align-items: center;
@@ -77,8 +75,12 @@
 }
 
 .nav__contact__item {
-  @extend %df-aic;
-
+  display: flex;
+  &:not(:last-child) {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin-bottom: 10px;
+    }
+  }
   @include desktop {
     &:not(:last-child) {
       margin-right: 50px;
@@ -87,14 +89,25 @@
 }
 
 .nav__contact__link {
-  @extend %df-aic;
+  display: flex;
+  align-items: baseline;
   justify-content: center;
-  @include tablet {
-    margin-bottom: 10px;
+
+  &-mail {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      padding-top: 14px;
+    }
+    @include desktop {
+      padding: 30px 0;
+    }
   }
-  @include desktop {
-    padding-top: 32px;
-    padding-bottom: 32px;
+  &-tel {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      padding-bottom: 14px;
+    }
+    @include desktop {
+      padding: 30px 0;
+    }
   }
 
   color: $additionaltext-color;

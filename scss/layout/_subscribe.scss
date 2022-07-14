@@ -23,9 +23,13 @@
   }
 
   &__field {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+    }
     @include desktop {
       flex-direction: row;
       align-items: baseline;
@@ -33,6 +37,11 @@
   }
 
   &__input {
+    @media screen and (max-width: 1199px) {
+      margin: 0 auto 20px auto;
+    }
+    margin: 0 auto 0 auto;
+    width: 100%;
     @include mobile {
       width: 450px;
     }
@@ -43,9 +52,7 @@
     border-radius: 4px;
     background-color: #00000015;
     color: $background-color;
-    @media screen and (max-width: 1999px) {
-      margin-bottom: 20px;
-    }
+
     @include desktop {
       width: 358px;
       margin-right: 12px;
@@ -53,6 +60,7 @@
   }
 
   &__button {
+    margin: 0 auto;
     @extend %df-aic;
     justify-content: center;
     padding: 10px 28px;

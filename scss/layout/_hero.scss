@@ -11,12 +11,13 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
 
-    @include tablet {
-      width: 700px;
-    }
+    // @include tablet {
+    //   width: 700px;
+    // }
     @include desktop {
       font-size: 44px;
       line-height: 1.36;
+      width: 700px;
     }
     color: $background-color;
     font-weight: 900;
@@ -86,6 +87,7 @@
   background-size: cover;
   margin: 0 auto;
   max-width: 1600px;
+
   @include desktop {
     padding: 200px 0;
   }
@@ -93,4 +95,7 @@
 
 .container.hero {
   background-color: transparent;
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    padding: 60px 200px;
+  }
 }

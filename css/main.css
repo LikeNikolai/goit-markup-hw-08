@@ -88,6 +88,7 @@ body.modal-open {
 }
 
 .backdrop {
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -365,22 +366,27 @@ body.modal-open {
 }
 
 .menu {
-  width: 100vw;
-  height: 100vh;
-  padding: 48px 40px;
-  display: none;
   position: absolute;
   top: 0;
   background-color: #fff;
   z-index: 100;
   overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  -webkit-transition: opacity 250ms linear, visibility 250ms linear;
-  transition: opacity 250ms linear, visibility 250ms linear;
+  -webkit-transition: display 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: display 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), display 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), display 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 .menu.is-open {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
@@ -463,7 +469,7 @@ body.modal-open {
 }
 
 .menu-button {
-  z-index: 1000;
+  z-index: 500;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -472,6 +478,8 @@ body.modal-open {
   border: none;
   background-color: transparent;
   margin-left: auto;
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu-button .icon-cross {
   display: none;
@@ -498,6 +506,10 @@ body.modal-open {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media screen and (max-width: 767px) {
   .header-container {
@@ -665,7 +677,6 @@ body.modal-open {
 }
 @media screen and (max-width: 1199px) {
   .footer__div {
-    padding: 0 60px;
     margin-bottom: 60px;
   }
 }
@@ -677,13 +688,14 @@ body.modal-open {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .footer__div {
     -webkit-box-align: baseline;
         -ms-flex-align: baseline;
             align-items: baseline;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1199px) {
+  .footer__div {
+    padding: 0 60px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -741,6 +753,9 @@ body.modal-open {
     text-align: start;
   }
 }
+.footer-logo-address.section {
+  padding: 60px 0;
+}
 
 .hero {
   background-color: #2f303a;
@@ -758,15 +773,11 @@ body.modal-open {
   font-weight: 900;
   margin-bottom: 20px;
 }
-@media screen and (min-width: 768px) {
-  .hero__title {
-    width: 700px;
-  }
-}
 @media screen and (min-width: 1200px) {
   .hero__title {
     font-size: 44px;
     line-height: 1.36;
+    width: 700px;
   }
 }
 .hero__button {
@@ -839,6 +850,11 @@ body.modal-open {
 .container.hero {
   background-color: transparent;
 }
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .container.hero {
+    padding: 60px 200px;
+  }
+}
 
 .cards__page {
   border-top: #ececec 1px solid;
@@ -880,13 +896,13 @@ body.modal-open {
   -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
           box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
 }
-.portfolio__button__item:not(:last-child) {
-  margin-right: 8px;
-}
 @media screen and (max-width: 767px) {
-  .portfolio__button {
+  .portfolio__button__item {
     margin-bottom: 15px;
   }
+}
+.portfolio__button__item:not(:last-child) {
+  margin-right: 8px;
 }
 
 @media screen and (min-width: 768px) {
@@ -1455,16 +1471,21 @@ body.modal-open {
   color: #ffffff;
 }
 .subscribe__field {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .subscribe__field {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 @media screen and (min-width: 1200px) {
   .subscribe__field {
@@ -1478,6 +1499,8 @@ body.modal-open {
   }
 }
 .subscribe__input {
+  margin: 0 auto 0 auto;
+  width: 100%;
   height: 50px;
   padding: 15px 16px;
   border: 1px solid rgba(255, 255, 255, 0.3019607843);
@@ -1485,14 +1508,14 @@ body.modal-open {
   background-color: rgba(0, 0, 0, 0.0823529412);
   color: #ffffff;
 }
+@media screen and (max-width: 1199px) {
+  .subscribe__input {
+    margin: 0 auto 20px auto;
+  }
+}
 @media screen and (min-width: 480px) {
   .subscribe__input {
     width: 450px;
-  }
-}
-@media screen and (max-width: 1999px) {
-  .subscribe__input {
-    margin-bottom: 20px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1502,6 +1525,7 @@ body.modal-open {
   }
 }
 .subscribe__button {
+  margin: 0 auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

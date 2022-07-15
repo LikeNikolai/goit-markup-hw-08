@@ -28,14 +28,15 @@
 
 .card {
   background-color: $background-color;
-  margin-bottom: 30px;
 
   @media screen and (max-width: 767px) {
     &:last-child {
       margin-bottom: 0;
     }
   }
+  margin-bottom: 30px;
   @include tablet {
+    margin-bottom: 0;
     width: calc((100% - 30px) / 2);
   }
   @include desktop {
